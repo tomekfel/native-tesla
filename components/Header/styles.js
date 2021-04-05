@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
+
+const statusBarHeight = StatusBar.currentHeight;
 
 const styles = StyleSheet.create({
   container: {
@@ -19,6 +21,15 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     resizeMode: "contain",
+  },
+  header: {
+    position: "absolute",
+    top: 0,
+    width: "100%",
+    zIndex: 100,
+    height: statusBarHeight,
+    backgroundColor: "#fff",
+    opacity: 0.5,
   },
 });
 
