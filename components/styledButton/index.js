@@ -2,9 +2,11 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import styles from "./styles";
 
-export default function StyledButton({ type, content }) {
-  const backgroundColor = type === "primary" ? "black" : "white";
-  const textColor = type === "primary" ? "white" : "black";
+const StyledButton = (props) => {
+  const { type, content } = props;
+
+  const backgroundColor = type === "primary" ? "#171A20CC" : "#FFFFFFA6";
+  const textColor = type === "primary" ? "#FFFFFF" : "#171A20";
 
   return (
     <View style={styles.container}>
@@ -16,4 +18,6 @@ export default function StyledButton({ type, content }) {
       </Pressable>
     </View>
   );
-}
+};
+
+export default StyledButton;
