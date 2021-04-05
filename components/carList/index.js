@@ -1,10 +1,12 @@
 import React from "react";
-import { View, FlatList, Dimensions } from "react-native";
+import { View, FlatList, Dimensions, StatusBar } from "react-native";
 import styles from "./styles";
 import cars from "./cars";
 import CarItem from "../carItem";
 
 const CarsList = () => {
+  const screenHeight = Dimensions.get("screen").height;
+  const statusBarHeight = StatusBar.currentHeight;
   const renderItem = ({ item }) => <CarItem car={item} />;
 
   return (
@@ -15,7 +17,7 @@ const CarsList = () => {
         keyExtractor={(item) => item.name}
         snapToAlignment={"start"}
         decelerationRate={"fast"}
-        snapToInterval={Dimensions.get("window").height}
+        snapToInterval={screenHeight - statusBarHeight}
       />
     </View>
   );
